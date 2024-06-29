@@ -7,8 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors:{
-        success: colors.green
+      colors: {
+        success: colors.green,
+        primary: colors.blue,
+        danger: colors.red,
+        yellow: colors.yellow
       }
     },
   },
