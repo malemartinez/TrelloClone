@@ -1,27 +1,39 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { faTrello } from '@fortawesome/free-brands-svg-icons';
-import { faStar, faBox, faWaveSquare, faAngleDown, faAngleUp , faHeart ,faBorderAll, faUsers, faGear} from '@fortawesome/free-solid-svg-icons';
+import { ToDo } from 'src/app/models/todos.model';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html'
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
 
-  faTrello = faTrello
-  faStar = faStar
-  faBox =faBox
-  faWaveSquare =faWaveSquare
-  faAngleDown =faAngleDown
-  faAngleUp =faAngleUp
-  faHeart =faHeart
-  faBorderAll =faBorderAll
-  faUsers =faUsers
-  faGear =faGear
+  todos: ToDo []=[
+    {
+      id: '1',
+      title: 'Task 1'
+    },
+    {
+      id: '2',
+      title: 'Task 2'
+    },
+    {
+      id: '3',
+      title: 'Task 3'
+    },
+    {
+      id: '4',
+      title: 'Task 4'
+    },
+  ]
+  
 
   constructor() { }
 
-  ngOnInit(): void {
+
+
+  drop(event: CdkDragDrop<any>){
+    moveItemInArray(this.todos, event.previousIndex, event.currentIndex);
   }
 
 }
