@@ -1,6 +1,6 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import { ToDo } from 'src/app/models/todos.model';
+import { columns, ToDo } from 'src/app/models/todos.model';
 
 @Component({
   selector: 'app-board',
@@ -29,59 +29,70 @@ import { ToDo } from 'src/app/models/todos.model';
 })
 export class BoardComponent {
 
-  todos: ToDo []=[
+  lists: columns[]=[
     {
-      id: '1',
-      title: 'Task 1'
+      title:'ToDos',
+      todos: [
+        {
+          id: '1',
+          title: 'Write down my linkedin description'
+        },
+        {
+          id: '2',
+          title: 'Task 2'
+        },
+        {
+          id: '3',
+          title: 'Task 3'
+        },
+        {
+          id: '4',
+          title: 'Task 4'
+        },
+      ]
     },
     {
-      id: '2',
-      title: 'Task 2'
+      title:'Doing',
+      todos: [
+        {
+          id: '1',
+          title: 'Write down my linkedin description'
+        },
+        {
+          id: '2',
+          title: 'Task 2'
+        },
+        {
+          id: '3',
+          title: 'Task 3'
+        },
+        {
+          id: '4',
+          title: 'Task 4'
+        },
+      ]
     },
     {
-      id: '3',
-      title: 'Task 3'
-    },
-    {
-      id: '4',
-      title: 'Task 4'
-    },
-  ]
-  doing: ToDo []=[
-    {
-      id: '1',
-      title: 'Task 1'
-    },
-    {
-      id: '2',
-      title: 'Task 2'
-    },
-    {
-      id: '3',
-      title: 'Task 3'
-    },
-    {
-      id: '4',
-      title: 'Task 4'
-    },
-  ]
-  done: ToDo []=[
-    {
-      id: '1',
-      title: 'Task 1'
-    },
-    {
-      id: '2',
-      title: 'Task 2'
-    },
-    {
-      id: '3',
-      title: 'Task 3'
-    },
-    {
-      id: '4',
-      title: 'Task 4'
-    },
+      title:'Done',
+      todos: [
+        {
+          id: '1',
+          title: 'Write down my linkedin description'
+        },
+        {
+          id: '2',
+          title: 'Watch 3 videos'
+        },
+        {
+          id: '3',
+          title: 'Task 3'
+        },
+        {
+          id: '4',
+          title: 'Task 4'
+        },
+      ]
+    }
   ]
 
 
@@ -100,6 +111,10 @@ export class BoardComponent {
         event.currentIndex,
       );
     }
+  }
+
+  addList(){
+    this.lists.push()
   }
 
 }
