@@ -1,6 +1,7 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
 import { columns, ToDo } from 'src/app/models/todos.model';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-board',
@@ -28,6 +29,8 @@ import { columns, ToDo } from 'src/app/models/todos.model';
   ]
 })
 export class BoardComponent {
+
+  faPlus = faPlus;
 
   lists: columns[]=[
     {
@@ -100,7 +103,7 @@ export class BoardComponent {
 
 
 
-  drop(event: CdkDragDrop<any>){
+  drop(event: CdkDragDrop<ToDo[]>){
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -113,8 +116,13 @@ export class BoardComponent {
     }
   }
 
+  dropColumn(event: CdkDragDrop<any>){
+    moveItemInArray(this.lists, event.previousIndex, event.currentIndex);
+  }
+
   addList(){
     this.lists.push()
   }
+
 
 }
