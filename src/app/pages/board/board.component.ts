@@ -1,7 +1,10 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Dialog, DIALOG_DATA } from '@angular/cdk/dialog';
+
 import { columns, ToDo } from 'src/app/models/todos.model';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 
 @Component({
   selector: 'app-board',
@@ -99,7 +102,7 @@ export class BoardComponent {
   ]
 
 
-  constructor() { }
+  constructor(public dialog: Dialog) { }
 
 
 
@@ -122,6 +125,14 @@ export class BoardComponent {
 
   addList(){
     this.lists.push()
+  }
+
+  openDialog(todo: ToDo) {
+    this.dialog.open( DialogComponent, {
+      minWidth: '300px',
+      maxWidth: '50vw',
+      data: { item : todo },
+    });
   }
 
 

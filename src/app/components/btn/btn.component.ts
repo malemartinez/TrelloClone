@@ -21,7 +21,8 @@ export class BtnComponent implements OnInit {
       danger: 'bg-red-700 hover:bg-red-800 focus:ring-red-300',
       primary: 'bg-primary-700 hover:bg-primary-800 focus:ring-primary-300',
       yellow: 'bg-yellow-700 hover:bg-yellow-800 focus:ring-yellow-300',
-      sky: 'bg-sky-700 hover:bg-sky-800 focus:ring-sky-300'
+      sky: 'bg-sky-700 hover:bg-sky-800 focus:ring-sky-300',
+      graylight: 'bg-gray-200 hover:bg-gray-600 focus:ring-gray-300'
     };
     return colorsList[this.btnColor];
   }
