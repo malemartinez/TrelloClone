@@ -6,6 +6,9 @@ import { ToDo } from 'src/app/models/todos.model';
 interface InputData {
   item: ToDo
 }
+interface OutputData {
+  rta: boolean
+}
 
 @Component({
   selector: 'app-dialog',
@@ -25,7 +28,7 @@ export class DialogComponent implements OnInit {
   todo : ToDo;
 
   constructor(
-    public dialogRef: DialogRef,
+    public dialogRef: DialogRef<OutputData>,
     @Inject(DIALOG_DATA) public data: InputData
   ) {this.todo = data.item }
 
@@ -34,6 +37,12 @@ export class DialogComponent implements OnInit {
 
   close(){
     this.dialogRef.close();
+  }
+
+  closeWithParam(param: boolean){
+    this.dialogRef.close({
+      rta: param
+    });
   }
 
 }

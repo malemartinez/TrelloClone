@@ -128,10 +128,15 @@ export class BoardComponent {
   }
 
   openDialog(todo: ToDo) {
-    this.dialog.open( DialogComponent, {
+    const dialogRef = this.dialog.open( DialogComponent, {
       minWidth: '300px',
       maxWidth: '50vw',
       data: { item : todo },
+    });
+
+    dialogRef.closed.subscribe(result => {
+      console.log( result );
+      // this.animal = result;
     });
   }
 
