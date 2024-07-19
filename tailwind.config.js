@@ -11,7 +11,10 @@ module.exports = {
         success: colors.green,
         primary: colors.blue,
         danger: colors.red,
-        yellow: colors.yellow
+        yellow: colors.yellow,
+        textColor: '#B6C2CF',
+        todoCardColor: '#22272B',
+        textSubtle: '#9FADBC'
       }
     },
   },
