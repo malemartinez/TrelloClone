@@ -1,52 +1,54 @@
 <div class="flex flex-col h-screen">
   <app-navbar></app-navbar>
   <div class="w-full grow bg-sky-600 px-4 pb-4">
-    <div>
-      <h2 class="text-xl font-bold text-white my-4">Demo Board</h2>
-    </div>
-    <div class="flex items-start w-full h-full overflow-x-scroll"
-      cdkDropList
-      cdkDropListOrientation="horizontal"
-      (cdkDropListDropped)="dropColumn($event)"
-      cdkDropListGroup>
+    <div class="flex flex-col h-full">
+      <div>
+        <h2 class="text-xl font-bold text-white my-4">Demo Board</h2>
+      </div>
+      <div class="flex items-start w-full h-full overflow-x-scroll"
+        cdkDropList
+        cdkDropListOrientation="horizontal"
+        (cdkDropListDropped)="dropColumn($event)"
+        cdkDropListGroup>
 
-      <div class="rounded-xl bg-[#101204] w-72 p-2 mr-3 shrink-0 text-textSubtle shadow-sm pb-2"  *ngFor="let column of lists" cdkDrag>
-        <div class="flex justify-between py-1 ">
-          <h3 class="text-sm font-bold py-1.5 pl-3 pr-2">{{column.title}}</h3>
-          <button class="grow-0 px-2 py-1 rounded-lg text-textSubtle hover:bg-[#A6C5E229] hover:text-textColor">
-            <fa-icon [icon]="faEllipsis"></fa-icon>
-          </button>
-        </div>
+        <div class="rounded-xl bg-[#101204] w-72 p-2 mr-3 shrink-0 text-textSubtle shadow-sm pb-2"  *ngFor="let column of lists" cdkDrag>
+          <div class="flex justify-between py-1 ">
+            <h3 class="text-sm font-bold py-1.5 pl-3 pr-2">{{column.title}}</h3>
+            <button class="grow-0 px-2 py-1 rounded-lg text-textSubtle hover:bg-[#A6C5E229] hover:text-textColor">
+              <fa-icon [icon]="faEllipsis"></fa-icon>
+            </button>
+          </div>
 
-        <div class="flex flex-col text-sm gap-2 mt-2 min-h-3 " cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="column.todos">
-          <div (click)="openDialog(todo)"
-          *ngFor="let todo of column.todos"
-            cdkDrag
-            class="min-h-6  pt-2 px-3 pb-1 text-textColor hover:outline  hover:outline-1  rounded-lg bg-todoCardColor  cursor-pointer "
-          >
-            <div class="mb-1">
-              {{todo.title}}
+          <div class="flex flex-col text-sm gap-2 mt-2 min-h-3 " cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="column.todos">
+            <div (click)="openDialog(todo)"
+            *ngFor="let todo of column.todos"
+              cdkDrag
+              class="min-h-6  pt-2 px-3 pb-1 text-textColor hover:outline  hover:outline-1  rounded-lg bg-todoCardColor  cursor-pointer "
+            >
+              <div class="mb-1">
+                {{todo.title}}
+              </div>
             </div>
+
+          </div>
+
+          <div class="flex items-center justify-between pt-2">
+            <button class="flex  items-center justify-start grow py-1.5 pr-3 pl-2 text-sm text-textSubtle hover:bg-[#A6C5E229] hover:text-textColor rounded-lg">
+              <span><fa-icon class="mr-2 w-4 h-4" [icon]="faPlus"></fa-icon></span>
+              <span>Añade una tarjeta</span>
+            </button>
+            <button class="grow-0 px-2 py-1 rounded-lg text-textSubtle hover:bg-[#A6C5E229] hover:text-textColor">
+              <fa-icon class="" [icon]="faFlipboard"></fa-icon>
+            </button>
           </div>
 
         </div>
-
-        <div class="flex items-center justify-between pt-2">
-          <button class="flex  items-center justify-start grow py-1.5 pr-3 pl-2 text-sm text-textSubtle hover:bg-[#A6C5E229] hover:text-textColor rounded-lg">
-            <span><fa-icon class="mr-2 w-4 h-4" [icon]="faPlus"></fa-icon></span>
-             <span>Añade una tarjeta</span>
-          </button>
-          <button class="grow-0 px-2 py-1 rounded-lg text-textSubtle hover:bg-[#A6C5E229] hover:text-textColor">
-            <fa-icon class="" [icon]="faFlipboard"></fa-icon>
+        <div class="px-2 shrink-0">
+          <button class=" flex items-start w-72 p-3 mr-3 rounded-xl bg-[#ffffff3d] hover:bg-[#A6C5E229] text-[#FFFFFF] text-sm" (click)="addList()">
+              <fa-icon class="mr-2" [icon]="faPlus"></fa-icon>
+            Añade otra lista
           </button>
         </div>
-
-      </div>
-      <div class="px-2 shrink-0">
-        <button class=" flex items-start w-72 p-3 mr-3 rounded-xl bg-[#ffffff3d] hover:bg-[#A6C5E229] text-[#FFFFFF] text-sm" (click)="addList()">
-            <fa-icon class="mr-2" [icon]="faPlus"></fa-icon>
-          Añade otra lista
-        </button>
       </div>
     </div>
   </div>
