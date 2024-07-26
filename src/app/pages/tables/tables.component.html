@@ -11,9 +11,17 @@
       <ng-container *ngFor="let col of displayedColumns">
         <ng-container [cdkColumnDef]="col">
           <th class="px-6 py-3" cdk-header-cell *cdkHeaderCellDef> {{col}} </th>
-          <td class="px-6 py-4" cdk-cell *cdkCellDef="let element"> {{element[col]}} </td>
+          <td class="px-6 py-4" cdk-cell *cdkCellDef="let element">
+            <ng-container *ngIf="col !== 'Actions';">
+              {{element[col]}}
+            </ng-container>
+            <ng-container *ngIf="col == 'Actions';">
+              <app-btn btnColor="primary" (click)="update(element)">Acción</app-btn>
+            </ng-container>
+          </td>
         </ng-container>
       </ng-container>
+
 
       <!-- Position Column -->
       <!-- <ng-container cdkColumnDef="position">

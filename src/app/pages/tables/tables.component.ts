@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSourceProduct } from './data-source';
 
 export interface PeriodicElement {
   name: string;
@@ -7,14 +8,15 @@ export interface PeriodicElement {
   symbol: string;
 }
 
-
 @Component({
   selector: 'app-tables',
   templateUrl: './tables.component.html'
 })
 export class TablesComponent implements OnInit {
 
-  dataSource: PeriodicElement[] = [
+  dataSource = new DataSourceProduct();
+
+  ELEMENTS_DATA: PeriodicElement[] = [
     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
     {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
     {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -27,11 +29,16 @@ export class TablesComponent implements OnInit {
     {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
   ];
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol' , 'Actions'];
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource.initElements(this.ELEMENTS_DATA)
+  }
+
+  update(element: PeriodicElement){
+    this.dataSource.update(element.position, { weight: 200 })
   }
 
 }
