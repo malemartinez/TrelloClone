@@ -1,0 +1,59 @@
+<div class="p-6 bg-[#282E33] relative rounded-xl shadow text-textColor">
+  <div class="flex flex-row items-center space-x-2 ">
+    <fa-icon class="" [icon]="faCheckToSlot"></fa-icon>
+    <textarea rows="1" class="w-full py-1.5 px-2.5 rounded border-none shadow-none resize-none bg-[#282E33] text-lg font-semibold  ">{{todo.title}}</textarea>
+    <button type="button" class=" focus:outline-none p-2" (click)="close()">
+      <fa-icon [icon]="faXmark"></fa-icon>
+    </button>
+  </div>
+  <p class="text-sm mb-5">en la lista <a href="" class="underline">ToDo</a></p>
+  <div class="flex w-full gap-4">
+    <div class="flex space-x-2 mb-5 w-4/6">
+      <fa-icon class="" [icon]="faBars"></fa-icon>
+      <div class="flex flex-col">
+        <h3 class="text-lg font-semibold ">Description</h3>
+        <p class="text-sm ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, hic? Adipisci soluta cum odio, beatae ratione magni nobis, optio similique rerum minus excepturi sed vel, id voluptatibus repellendus numquam quod.</p>
+      </div>
+    </div>
+    <div class="flex flex-auto space-y-2 flex-col">
+      <h3 class="text-[12px]">Añadir a la tarjeta</h3>
+      <app-btn typeBtn="button" btnColor="graylight">
+        <span class="flex justify-start text-sm">
+          <fa-icon class=" mr-2" [icon]="faUser"></fa-icon>
+          <span>Miembros</span>
+        </span>
+      </app-btn>
+      <app-btn typeBtn="button" btnColor="graylight">
+        <span class="flex justify-start text-sm">
+          <fa-icon class=" mr-2" [icon]="faTag"></fa-icon>
+          <span>Etiquetas</span>
+        </span>
+      </app-btn>
+      <app-btn typeBtn="button" btnColor="graylight">
+        <span class="flex justify-start text-sm">
+          <fa-icon class=" mr-2" [icon]="faCheckSquare"></fa-icon>
+          <span>Checklist</span>
+        </span>
+      </app-btn>
+      <app-btn typeBtn="button" btnColor="graylight">
+        <span class="flex justify-start text-sm">
+          <fa-icon class=" mr-2" [icon]="faClock"></fa-icon>
+          <span>Fechas</span>
+        </span>
+      </app-btn>
+      <app-btn typeBtn="button" btnColor="graylight">
+        <span class="flex justify-start text-sm">
+          <fa-icon class=" mr-2" [icon]="faClock"></fa-icon>
+          <span>Adjunto</span>
+        </span>
+      </app-btn>
+      <app-btn typeBtn="button" btnColor="graylight">
+        <span class="flex justify-start text-sm">
+          <fa-icon class=" mr-2" [icon]="faClock"></fa-icon>
+          <span>Portada</span>
+        </span>
+      </app-btn>
+    </div>
+  </div>
+  <button (click)="closeWithParam(true)">OK</button>
+</div>

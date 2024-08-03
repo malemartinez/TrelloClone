@@ -1,105 +1,203 @@
-<app-navbar></app-navbar>
+<div class="flex flex-col h-screen">
+  <app-navbar></app-navbar>
+  <div class="flex flex-col h-full">
+    <div class="text-textColor bg-backgroundColor relative h-full">
+      <div class="flex flex-row justify-center items-start flex-1">
 
-<div class="text-[#B6C2CF]">
-  <div class="flex flex-row justify-center items-start">
-    <nav class="sticky top-10 w-64 px-4 mt-10" >
-      <ul class="border-b border-solid border-gray-500 list-none m-0 p-0">
-        <li class="block mb-1">
-          <a routerLinkActive="{bg-[#1C2B41], text-[#579DFF] } "
-            class="flex items-center min-h-5 py-3/2 px-2 gap-2 rounded-md font-medium hover:bg-[#A6C5E229] cursor-pointer ">
-            <span class="w-6 h-6 text-center text-[#9FADBC] ">
-              <fa-icon  [icon]= "faTrello"></fa-icon>
-            </span>
-            <span class="w-min flex-auto">Tableros</span>
-          </a>
-        </li>
-        <li class="block mb-1">
-          <a routerLinkActive="{bg-[#1C2B41], text-[#579DFF] } "
-            class="flex items-center min-h-5 py-3/2 px-2 gap-2 rounded-md font-medium hover:bg-[#A6C5E229] cursor-pointer">
-            <span class="w-6 h-6 text-center text-[#9FADBC]">
-              <fa-icon  [icon]= "faBox"></fa-icon>
-            </span>
-            <span class="w-min flex-auto">Plantillas</span>
-          </a>
-        </li>
-        <li class="block mb-1">
-          <a routerLinkActive="{bg-[#1C2B41], text-[#579DFF] } "
-            class="flex items-center min-h-5 py-3/2 px-2 gap-2 rounded-md font-medium hover:bg-[#A6C5E229] cursor-pointer">
-            <span class="w-6 h-6 text-center text-[#9FADBC]">
-              <fa-icon  [icon]= "faWaveSquare"></fa-icon>
-            </span>
-            <span class="w-min flex-auto">Inicio</span>
-          </a>
-        </li>
-      </ul>
-      <!-- Acordeon Espacios de trabajo -->
-      <div class="pt-3 pb-10">
-        <div class="flex items-start pl-3 h-8">
-          <div class="py-2 font-semibold text-xs ">Espacios de Trabajo</div>
-        </div>
-        <cdk-accordion class="flex justify-between">
-            <cdk-accordion-item
-              #accordionItem="cdkAccordionItem"
-              role="button"
-              >
-              <!-- Texto que se muestra para hacer click  -->
-              <div class="flex" (click)="accordionItem.toggle()">
-                <span class="">T</span> Trabajo en casa
-                <span class="">
-                  <fa-icon [icon]="accordionItem.expanded ? faAngleUp : faAngleDown"></fa-icon>
+        <nav class="sticky top-10 w-64 px-4 mt-10 max-h-[90vh]" >
+          <ul class="border-b border-solid border-gray-500 list-none m-0 p-0">
+            <li class="block mb-1">
+              <a routerLinkActive="{bg-[#1C2B41], text-[#579DFF] } "
+                class="flex items-center min-h-5 py-2 px-2 gap-2 rounded-md font-medium hover:bg-hoverItems cursor-pointer ">
+                <span class="w-6 h-6 text-center text-textSubtle ">
+                  <fa-icon  [icon]= "faTrello"></fa-icon>
                 </span>
-              </div>
-              <!-- Contenido dentro del aacordeon -->
-              <div
-                class="accordion-item-body"
-                role="region"
-                [style.display]="accordionItem.expanded ? '' : 'none'"
-                >
-                <ul class="ml-2 flex flex-col text-sm text-gray-700">
-                  <li>
-                    <a class="block py-1 px-3"
-                      ><fa-icon [icon]="faTrello"></fa-icon> Boards</a
+                <span class="w-min flex-auto">Tableros</span>
+              </a>
+            </li>
+            <li class="block mb-1">
+              <a routerLinkActive="{bg-[#1C2B41], text-[#579DFF] } "
+                class="flex items-center min-h-5 py-2 px-2 gap-2 rounded-md font-medium hover:bg-hoverItems cursor-pointer">
+                <span class="w-6 h-6 text-center text-textSubtle">
+                  <fa-icon  [icon]= "faBox"></fa-icon>
+                </span>
+                <span class="w-min flex-auto">Plantillas</span>
+              </a>
+            </li>
+            <li class="block mb-1">
+              <a routerLinkActive="{bg-[#1C2B41], text-[#579DFF] } "
+                class="flex items-center min-h-5 py-2 px-2 gap-2 rounded-md font-medium hover:bg-hoverItems cursor-pointer">
+                <span class="w-6 h-6 text-center text-textSubtle">
+                  <fa-icon  [icon]= "faWaveSquare"></fa-icon>
+                </span>
+                <span class="w-min flex-auto">Inicio</span>
+              </a>
+            </li>
+          </ul>
+          <!-- Acordeon Espacios de trabajo -->
+          <div class="pt-3 pb-10">
+            <div class="flex items-start pl-3 h-8 ">
+              <div class="py-2 font-semibold text-xs ">Espacios de Trabajo</div>
+            </div>
+            <cdk-accordion class="text-sm">
+                <cdk-accordion-item
+                  #accordionItem="cdkAccordionItem"
+                  role="button"
+                  >
+                  <!-- Texto que se muestra para hacer click  -->
+                  <div class="flex gap-2 items-center mb-1 py-2 px-2 rounded-md font-medium hover:bg-hoverItems" (click)="accordionItem.toggle()">
+                    <span class="flex  items-center justify-center w-6 h-6 rounded text-sm text-[#1D2125] font-bold bg-[#9F8FEF]">T</span>
+                    <span class="flex-auto w-min">Trabajo en casa</span>
+                    <span class="">
+                      <fa-icon [icon]="accordionItem.expanded ? faAngleUp : faAngleDown"></fa-icon>
+                    </span>
+                  </div>
+                  <!-- Contenido dentro del aacordeon -->
+                  <div
+                    class="accordion-item-body"
+                    role="region"
+                    [style.display]="accordionItem.expanded ? '' : 'none'"
                     >
-                  </li>
-                  <li>
-                    <a class="block py-1 px-3"
-                      ><fa-icon [icon]="faHeart"></fa-icon> Highlights</a
-                    >
-                  </li>
-                  <li>
-                    <a class="block py-1 px-3"
-                      ><fa-icon [icon]="faBorderAll"></fa-icon> Views</a
-                    >
-                  </li>
-                  <li>
-                    <a class="block py-1 px-3"
-                      ><fa-icon [icon]="faUsers"></fa-icon> Members</a
-                    >
-                  </li>
-                  <li>
-                    <a class="block py-1 px-3"
-                      ><fa-icon [icon]="faGear"></fa-icon> Settings</a
-                    >
-                  </li>
-                </ul>
-              </div>
-             </cdk-accordion-item>
-        </cdk-accordion>
+                    <ul class="ml-2 flex flex-col text-sm text-textColor">
+                      <li class="block mb-1 rounded hover:bg-hoverItems">
+                        <a class="flex items-center gap-2 py-2 px-2">
+                          <fa-icon class="" [icon]="faTrello"></fa-icon>
+                          <span>Tableros</span>
+                        </a
+                        >
+                      </li>
+                      <li class="block mb-1 rounded hover:bg-hoverItems">
+                        <a class="flex items-center gap-2 py-2 px-2"
+                          ><fa-icon [icon]="faHeart"></fa-icon>
+                          <span>Lo más destacado</span>
+                        </a
+                        >
+                      </li>
+                      <li class="block mb-1 rounded hover:bg-hoverItems">
+                        <a class="flex items-center gap-2 py-2 px-2"
+                          ><fa-icon [icon]="faBorderAll"></fa-icon>
+                          <span>Vistas</span>
+                        </a
+                        >
+                      </li>
+                      <li class="block mb-1 rounded hover:bg-hoverItems">
+                        <a class="flex items-center gap-2 py-2 px-2"
+                          ><fa-icon [icon]="faUsers"></fa-icon>
+                          <span>Miembros</span>
+                        </a
+                        >
+                      </li>
+                      <li class="block mb-1 rounded hover:bg-hoverItems">
+                        <a class="flex items-center gap-2 py-2 px-2"
+                          ><fa-icon [icon]="faGear"></fa-icon>
+                          <span>Configuración</span>
+                        </a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                 </cdk-accordion-item>
+            </cdk-accordion>
+          </div>
+        </nav>
 
-
-      </div>
-    </nav>
-    <div class="w-full min-w-72  mt-10 mx-4">
-      <div class="pb-5">
-        <div>
-          <div>icon estrella</div>
-          <div>Tableros Marcados</div>
+        <div class="w-full min-w-72 max-w-[825px] mt-10 mx-4">
+          <div class="pb-5">
+            <div class="flex relative ml-10 pb-3 ">
+              <span class="absolute left-[-40px] top-0 w-8 h-8 pb-3 flex justify-center items-center ">
+                <fa-icon class="text-[20px]" [icon]="faStar"></fa-icon>
+              </span>
+              <h3 class="font-semibold">Tableros Marcados</h3>
+            </div>
+            <div class="font-semibold">
+              <ul class="flex flex-wrap justify-start">
+                <li class="w-[24%] mr-[2%] mb-[2%] ">
+                  <a href="" class="board-title rounded p-2 relative bg-yellow-700 block hover:text-[#fff]">
+                    <span class="absolute top-0 left-0 right-0 bottom-0 rounded block bg-[#00000026]"></span>
+                    <div class="flex flex-col justify-between h-20 relative">
+                      <div class="inline-block font-semibold overflow-hidden w-full">Title</div>
+                      <div class="flex items-baseline justify-end ">
+                        <span class="star-icon flex items-center overflow-hidden ml-1 relative right-[-4px] transition opacity-0">
+                          <fa-icon class="text-[12px]" [icon]="faStar"></fa-icon>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="w-[24%] mr-[2%] mb-[2%] ">
+                  <a href="" class="board-title rounded p-2 relative bg-yellow-700 block hover:text-[#fff]">
+                    <span class="absolute top-0 left-0 right-0 bottom-0 rounded block bg-[#00000026]"></span>
+                    <div class="flex flex-col justify-between h-20 relative">
+                      <div class="inline-block font-semibold overflow-hidden w-full">Title</div>
+                      <div class="flex items-baseline justify-end ">
+                        <span class="star-icon flex items-center overflow-hidden ml-1 relative right-[-4px] transition opacity-0">
+                          <fa-icon class="text-[12px]" [icon]="faStar"></fa-icon>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="pb-5">
+            <div class="flex relative ml-10 pb-3 ">
+              <span class="absolute left-[-40px] top-0 w-8 h-8 pb-3 flex justify-center items-center ">
+                <fa-icon class="text-[20px]" [icon]="faClock"></fa-icon>
+              </span>
+              <h3 class="font-semibold">Visto Recientemente</h3>
+            </div>
+            <div class="font-semibold">
+              <ul class="flex flex-wrap justify-start">
+                <li class="w-[24%] mr-[2%] mb-[2%] ">
+                  <a href="" class="board-title rounded p-2 relative bg-yellow-700 block hover:text-[#fff]">
+                    <span class="absolute top-0 left-0 right-0 bottom-0 rounded block bg-[#00000026]"></span>
+                    <div class="flex flex-col justify-between h-20 relative">
+                      <div class="inline-block font-semibold overflow-hidden w-full">Title</div>
+                      <div class="flex items-baseline justify-end ">
+                        <span class="star-icon flex items-center overflow-hidden ml-1 relative right-[-4px] transition opacity-0">
+                          <fa-icon class="text-[12px]" [icon]="faStar"></fa-icon>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="w-[24%] mr-[2%] mb-[2%] ">
+                  <a href="" class="board-title rounded p-2 relative bg-yellow-700 block hover:text-[#fff]">
+                    <span class="absolute top-0 left-0 right-0 bottom-0 rounded block bg-[#00000026]"></span>
+                    <div class="flex flex-col justify-between h-20 relative">
+                      <div class="inline-block font-semibold overflow-hidden w-full">Title</div>
+                      <div class="flex items-baseline justify-end ">
+                        <span class="star-icon flex items-center overflow-hidden ml-1 relative right-[-4px] transition opacity-0">
+                          <fa-icon class="text-[12px]" [icon]="faStar"></fa-icon>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3 class="flex items-center text-textSubtle text-lg my-5">TUS ESPACIOS DE TRABAJO</h3>
+            <div class="pb-5 text-sm">
+              <div class="flex relative ml-10 pb-3 ">
+                <div class="absolute top-0 left-[-40px]">
+                  <span class="flex  items-center justify-center w-8 h-8 mb-4 rounded text-lg text-[#1D2125] font-bold bg-[#9F8FEF]">T</span>
+                </div>
+                <h3 class="flex-nowrap">trabajo en casa</h3>
+                <div></div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+          <button>Ver Todos los Tableros</button>
         </div>
-        <div>Contenedor</div>
+
       </div>
-      <div></div>
-      <div></div>
     </div>
+
   </div>
+
 </div>
 

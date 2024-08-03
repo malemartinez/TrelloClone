@@ -1,0 +1,56 @@
+<div  class="flex flex-col h-screen">
+  <app-navbar></app-navbar>
+
+  <div class="w-full grow p-6">
+    <h1 class="text-lg my-2">Table</h1>
+    <input type="search" [formControl] = "input">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" cdk-table [dataSource]="dataSource">
+
+      <tr class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400" cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+
+      <ng-container *ngFor="let col of displayedColumns">
+        <ng-container [cdkColumnDef]="col">
+          <th class="px-6 py-3" cdk-header-cell *cdkHeaderCellDef> {{col}} </th>
+          <td class="px-6 py-4" cdk-cell *cdkCellDef="let element">
+            <ng-container *ngIf="col !== 'Actions';">
+              {{element[col]}}
+            </ng-container>
+            <ng-container *ngIf="col == 'Actions';">
+              <app-btn btnColor="primary" (click)="update(element)">Acción</app-btn>
+            </ng-container>
+          </td>
+        </ng-container>
+      </ng-container>
+
+
+      <!-- Position Column -->
+      <!-- <ng-container cdkColumnDef="position">
+        <th cdk-header-cell *cdkHeaderCellDef> Position </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.position}} </td>
+      </ng-container> -->
+
+      <!-- Name Column -->
+      <!-- <ng-container cdkColumnDef="name">
+        <th cdk-header-cell *cdkHeaderCellDef> Name </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
+      </ng-container> -->
+
+      <!-- Weight Column -->
+      <!-- <ng-container cdkColumnDef="weight">
+        <th cdk-header-cell *cdkHeaderCellDef> Weight </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.weight}} </td>
+      </ng-container> -->
+
+      <!-- Symbol Column -->
+      <!-- <ng-container cdkColumnDef="symbol">
+        <th cdk-header-cell *cdkHeaderCellDef> Symbol </th>
+        <td cdk-cell *cdkCellDef="let element"> {{element.symbol}} </td>
+      </ng-container> -->
+
+    </table>
+
+  </div>
+
+</div>
+

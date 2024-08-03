@@ -4,3 +4,32 @@
 @tailwind utilities;
 
 @import '@angular/cdk/overlay-prebuilt.css';
+
+
+// body {
+//   --sb-track-color: #232e33;
+//   --sb-thumb-color: #616161;
+//   --sb-size: 14px;
+// }
+
+::-webkit-scrollbar {
+  width: 10px
+}
+
+::-webkit-scrollbar-track {
+  background: #232e3335;
+  // border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background:#ffffff3d;
+  border-radius: 8px;
+
+}
+
+// @supports not selector(::-webkit-scrollbar) {
+//   body {
+//     scrollbar-color: var(--sb-thumb-color)
+//                      var(--sb-track-color);
+//   }
+// }

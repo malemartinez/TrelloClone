@@ -1,7 +1,11 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Dialog, DIALOG_DATA } from '@angular/cdk/dialog';
+
 import { columns, ToDo } from 'src/app/models/todos.model';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faFlipboard } from '@fortawesome/free-brands-svg-icons';
+import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 
 @Component({
   selector: 'app-board',
@@ -15,6 +19,9 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
               0 8px 10px 1px rgba(0, 0, 0, 0.14),
               0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  .cdk-drag-placeholder {
+    opacity: 0;
   }
     /* Animate items as they're being sorted. */
     .cdk-drop-list-dragging .cdk-drag {
@@ -31,6 +38,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 export class BoardComponent {
 
   faPlus = faPlus;
+  faFlipboard = faFlipboard;
+  faEllipsis = faEllipsis;
 
   lists: columns[]=[
     {
@@ -99,7 +108,7 @@ export class BoardComponent {
   ]
 
 
-  constructor() { }
+  constructor(public dialog: Dialog) { }
 
 
 
@@ -122,6 +131,19 @@ export class BoardComponent {
 
   addList(){
     this.lists.push()
+  }
+
+  openDialog(todo: ToDo) {
+    const dialogRef = this.dialog.open( DialogComponent, {
+      minWidth: '500px',
+      maxWidth: '768px',
+      data: { item : todo },
+    });
+
+    dialogRef.closed.subscribe(result => {
+      console.log( result );
+      // this.animal = result;
+    });
   }
 
 

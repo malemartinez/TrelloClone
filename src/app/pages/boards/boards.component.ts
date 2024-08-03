@@ -1,10 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { faTrello } from '@fortawesome/free-brands-svg-icons';
-import { faStar, faBox, faWaveSquare, faAngleDown, faAngleUp , faHeart ,faBorderAll, faUsers, faGear} from '@fortawesome/free-solid-svg-icons';
+import { faStar, faBox, faWaveSquare, faAngleDown, faAngleUp , faHeart ,faBorderAll, faUsers, faGear, faClock} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-boards',
-  templateUrl: './boards.component.html'
+  templateUrl: './boards.component.html',
+  styles: [`
+    .board-title:hover span::first{
+      background-color: #00000040
+    }
+    .board-title:hover .star-icon{
+      margin-right: 6px;
+      opacity: 1;
+      width: 18px;
+    }
+
+    `]
 })
 export class BoardsComponent implements OnInit {
 
@@ -17,7 +28,8 @@ export class BoardsComponent implements OnInit {
   faHeart =faHeart
   faBorderAll =faBorderAll
   faUsers =faUsers
-  faGear =faGear
+  faGear =faGear;
+  faClock = faClock
 
   constructor() { }
 
