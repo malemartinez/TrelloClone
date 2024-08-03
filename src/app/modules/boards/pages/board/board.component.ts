@@ -5,7 +5,8 @@ import { Dialog, DIALOG_DATA } from '@angular/cdk/dialog';
 import { columns, ToDo } from 'src/app/models/todos.model';
 import { faPlus, faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { faFlipboard } from '@fortawesome/free-brands-svg-icons';
-import { DialogComponent } from 'src/app/components/dialog/dialog.component';
+import { DialogComponent } from '../../components/dialog/dialog.component';
+
 
 @Component({
   selector: 'app-board',
