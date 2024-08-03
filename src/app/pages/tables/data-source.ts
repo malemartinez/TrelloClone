@@ -11,12 +11,14 @@ interface PeriodicElement {
 export class DataSourceProduct extends DataSource<PeriodicElement>{
 
   data = new BehaviorSubject<PeriodicElement[]>([]);
+  originalData: PeriodicElement[] = [];
 
   override connect(): Observable<PeriodicElement[]> {
     return this.data;
   }
 
   initElements(periodicElement: PeriodicElement[]){
+    this.originalData = periodicElement;
     this.data.next(periodicElement)
   }
 
@@ -37,6 +39,14 @@ export class DataSourceProduct extends DataSource<PeriodicElement>{
       }
       this.data.next(elements)
     }
+  }
+
+  find(query:String){
+   const elementFilter = this.originalData.filter(item => {
+    const word = `${item.name}-${item.position}-${item.weight}`;
+    return word.toLowerCase().includes(query.toLowerCase())
+   } );
+    this.data.next(elementFilter)
   }
 
   override disconnect(collectionViewer: CollectionViewer): void {}

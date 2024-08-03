@@ -3,6 +3,7 @@
 
   <div class="w-full grow p-6">
     <h1 class="text-lg my-2">Table</h1>
+    <input type="search" [formControl] = "input">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" cdk-table [dataSource]="dataSource">
 
       <tr class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400" cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>

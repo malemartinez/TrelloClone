@@ -13,7 +13,10 @@ interface OutputData {
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss']
+  styles: [`
+    :host {
+    }
+  `]
 })
 export class DialogComponent implements OnInit {
 

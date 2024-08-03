@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { DataSourceProduct } from './data-source';
+import { debounce, debounceTime } from 'rxjs';
 
 export interface PeriodicElement {
   name: string;
@@ -15,6 +17,8 @@ export interface PeriodicElement {
 export class TablesComponent implements OnInit {
 
   dataSource = new DataSourceProduct();
+  input = new FormControl('', { nonNullable: true });
+
 
   ELEMENTS_DATA: PeriodicElement[] = [
     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
@@ -34,7 +38,14 @@ export class TablesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
     this.dataSource.initElements(this.ELEMENTS_DATA)
+
+    this.input.valueChanges
+    .pipe(
+      debounceTime(300) //sirve para esperar la inactividad del user y ahi si hacer la busqueda
+    )
+    .subscribe(value => this.dataSource.find(value));
   }
 
   update(element: PeriodicElement){

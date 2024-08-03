@@ -135,8 +135,8 @@ export class BoardComponent {
 
   openDialog(todo: ToDo) {
     const dialogRef = this.dialog.open( DialogComponent, {
-      minWidth: '300px',
-      maxWidth: '50vw',
+      minWidth: '500px',
+      maxWidth: '768px',
       data: { item : todo },
     });
 
