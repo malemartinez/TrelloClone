@@ -5,7 +5,8 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './btn.component.html'
 })
 export class BtnComponent implements OnInit {
-
+  @Input() disabled = false;
+  @Input() loading = false;
   @Input() typeBtn: 'button' | 'reset' | 'submit' = 'button';
   @Input() btnColor: string = '';
 
