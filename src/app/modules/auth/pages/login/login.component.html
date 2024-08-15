@@ -7,17 +7,7 @@
         <h1 class="text-center font-semibold pt-4 pb-8">
           Log in with Trello
         </h1>
-        <form novalidate class="space-y-4" action="">
-          <div class="relative">
-            <input placeholder="Enter email" type="email" class="w-full rounded bg-gray-100 border-2 border-gray-200">
-          </div>
-          <div class="relative">
-            <input placeholder="Enter password" type="password" class="w-full rounded bg-gray-100 border-2 border-gray-200">
-          </div>
-          <div>
-            <app-btn [typeBtn]='"submit"' [btnColor]="'success'">Log in</app-btn>
-          </div>
-        </form>
+        <app-login-form></app-login-form>
       </div>
     </div>
   </div>
