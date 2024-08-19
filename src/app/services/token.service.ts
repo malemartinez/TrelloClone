@@ -14,6 +14,6 @@ export class TokenService {
     return getCookie('tokenCookie')
   }
   deleteToken(){
-    localStorage.removeItem('token')
+    removeCookie('tokenCookie')
   }
 }
