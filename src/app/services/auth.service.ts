@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment } from '@environments/environment';
-import { switchMap , tap } from 'rxjs';
+import { BehaviorSubject, switchMap , tap } from 'rxjs';
 import { TokenService } from './token.service';
 import { LoginResponse } from '@models/authResponse.model';
 import { User } from '@models/user.model';
@@ -13,6 +13,7 @@ import { User } from '@models/user.model';
 export class AuthService {
 
   api_url = environment.API_URL;
+  user$ = new BehaviorSubject<User | null>(null)
 
   constructor(
     private http:HttpClient,
@@ -62,7 +63,9 @@ export class AuthService {
       headers:{
         Authorization: `Bearer ${token}`
       }
-    })
+    }).pipe(
+      tap(response => this.user$.next(response) )
+    )
   }
 
   logout(){

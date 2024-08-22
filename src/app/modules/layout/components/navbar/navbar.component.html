@@ -1,246 +1,250 @@
-<nav class="bg-backgroundColor  p-1.5 shadow-md text-textColor border-b-[1px] border-b-[#9fadbc29]">
-  <div class="flex flex-wrap justify-between items-center">
-    <div class="flex items-center">
-      <button class="flex justify-center items-center w-8 h-8 font-bold  rounded hover:bg-hoverItems">
-        <span class="flex justify-center items-center w-8">
-          <span class="">
-            <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C4 4.44772 4.44772 4 5 4H7C7.55228 4 8 4.44772 8 5V7C8 7.55228 7.55228 8 7 8H5C4.44772 8 4 7.55228 4 7V5ZM4 11C4 10.4477 4.44772 10 5 10H7C7.55228 10 8 10.4477 8 11V13C8 13.5523 7.55228 14 7 14H5C4.44772 14 4 13.5523 4 13V11ZM11 4C10.4477 4 10 4.44772 10 5V7C10 7.55228 10.4477 8 11 8H13C13.5523 8 14 7.55228 14 7V5C14 4.44772 13.5523 4 13 4H11ZM10 11C10 10.4477 10.4477 10 11 10H13C13.5523 10 14 10.4477 14 11V13C14 13.5523 13.5523 14 13 14H11C10.4477 14 10 13.5523 10 13V11ZM17 4C16.4477 4 16 4.44772 16 5V7C16 7.55228 16.4477 8 17 8H19C19.5523 8 20 7.55228 20 7V5C20 4.44772 19.5523 4 19 4H17ZM16 11C16 10.4477 16.4477 10 17 10H19C19.5523 10 20 10.4477 20 11V13C20 13.5523 19.5523 14 19 14H17C16.4477 14 16 13.5523 16 13V11ZM5 16C4.44772 16 4 16.4477 4 17V19C4 19.5523 4.44772 20 5 20H7C7.55228 20 8 19.5523 8 19V17C8 16.4477 7.55228 16 7 16H5ZM10 17C10 16.4477 10.4477 16 11 16H13C13.5523 16 14 16.4477 14 17V19C14 19.5523 13.5523 20 13 20H11C10.4477 20 10 19.5523 10 19V17ZM17 16C16.4477 16 16 16.4477 16 17V19C16 19.5523 16.4477 20 17 20H19C19.5523 20 20 19.5523 20 19V17C20 16.4477 19.5523 16 19 16H17Z" fill="currentColor"></path></svg>
+
+<ng-container *ngIf=" $user | async as user ">
+  <nav class="bg-backgroundColor  p-1.5 shadow-md text-textColor border-b-[1px] border-b-[#9fadbc29]">
+    <div class="flex flex-wrap justify-between items-center">
+      <div class="flex items-center">
+        <button class="flex justify-center items-center w-8 h-8 font-bold  rounded hover:bg-hoverItems">
+          <span class="flex justify-center items-center w-8">
+            <span class="">
+              <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4 5C4 4.44772 4.44772 4 5 4H7C7.55228 4 8 4.44772 8 5V7C8 7.55228 7.55228 8 7 8H5C4.44772 8 4 7.55228 4 7V5ZM4 11C4 10.4477 4.44772 10 5 10H7C7.55228 10 8 10.4477 8 11V13C8 13.5523 7.55228 14 7 14H5C4.44772 14 4 13.5523 4 13V11ZM11 4C10.4477 4 10 4.44772 10 5V7C10 7.55228 10.4477 8 11 8H13C13.5523 8 14 7.55228 14 7V5C14 4.44772 13.5523 4 13 4H11ZM10 11C10 10.4477 10.4477 10 11 10H13C13.5523 10 14 10.4477 14 11V13C14 13.5523 13.5523 14 13 14H11C10.4477 14 10 13.5523 10 13V11ZM17 4C16.4477 4 16 4.44772 16 5V7C16 7.55228 16.4477 8 17 8H19C19.5523 8 20 7.55228 20 7V5C20 4.44772 19.5523 4 19 4H17ZM16 11C16 10.4477 16.4477 10 17 10H19C19.5523 10 20 10.4477 20 11V13C20 13.5523 19.5523 14 19 14H17C16.4477 14 16 13.5523 16 13V11ZM5 16C4.44772 16 4 16.4477 4 17V19C4 19.5523 4.44772 20 5 20H7C7.55228 20 8 19.5523 8 19V17C8 16.4477 7.55228 16 7 16H5ZM10 17C10 16.4477 10.4477 16 11 16H13C13.5523 16 14 16.4477 14 17V19C14 19.5523 13.5523 20 13 20H11C10.4477 20 10 19.5523 10 19V17ZM17 16C16.4477 16 16 16.4477 16 17V19C16 19.5523 16.4477 20 17 20H19C19.5523 20 20 19.5523 20 19V17C20 16.4477 19.5523 16 19 16H17Z" fill="currentColor"></path></svg>
+            </span>
           </span>
-        </span>
-      </button>
-      <a routerLink="/app" class="px-2 hover:bg-hoverItems rounded">
-        <span class="flex justify-center items-center grow " >
-          <img
-            loading="lazy"
-            class=""
-            src="/assets/images/logo-gradient-white-trello.png"
-            alt="logo"
-            style="width: 75px;"
-
-          />
-        </span>
-      </a>
-      <div class="">
-        <ul class="flex items-center space-x-2 text-sm font-medium">
-          <li class="hidden min-[900px]:block p-1.5 rounded hover:bg-hoverItems cursor-pointer"
-            (click)="isOpenOverlayBoards = !isOpenOverlayBoards"
-            cdkOverlayOrigin
-            #boardsOverlay="cdkOverlayOrigin"
-          >
-            <div class="flex flex-row h-full">
-              <span>Espacio de Trabajo</span>
-              <span class="flex justify-center items-center flex-row ml-1">
-                <span class="">
-                  <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
-                </span>
-              </span>
-
-            </div>
-          </li>
-          <li class="hidden min-[1040px]:flex flex-row h-full p-1.5 rounded hover:bg-hoverItems cursor-pointer">
-              <span>Reciente</span>
-              <span class="flex justify-center items-center flex-row ml-1">
-                <span class="">
-                  <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
-                </span>
-              </span>
-          </li>
-          <li class="hidden min-[1060px]:flex flex-row h-full p-1.5 rounded hover:bg-hoverItems cursor-pointer">
-              <span>Marcado</span>
-              <span class="flex justify-center items-center flex-row ml-1">
-                <span class="">
-                  <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
-                </span>
-              </span>
-          </li>
-          <li class="hidden min-[1281px]:flex flex-row h-full p-1.5 rounded hover:bg-hoverItems cursor-pointer">
-              <span>Plantillas</span>
-              <span class="flex justify-center items-center flex-row ml-1">
-                <span class="">
-                  <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
-                </span>
-              </span>
-          </li>
-
-          <!-- Item que despliega en móviles -->
-          <li class=" xl:hidden flex flex-row h-full p-1.5 rounded hover:bg-hoverItems cursor-pointer">
-            <span>Más</span>
-            <span class="flex justify-center items-center flex-row ml-1">
-              <span class="">
-                <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
-              </span>
-            </span>
-          </li>
-
-          <button class="px-2.5 h-8 rounded text-[#1D2125] bg-[#579DFF] hover:bg-[#85B8FF]">
-            <span class="">Crear</span>
-          </button>
-
-        </ul>
-      </div>
-    </div>
-    <div class="flex ">
-
-      <div class="flex">
-        <div class="hidden md:block">
-          <div class=" relative flex items-center bg-[#22272B] mx-1 h-8 rounded text-[#8C9BAB]" style="width: 200px;">
-            <span class="absolute top-2 left-2">
-              <svg width="16" height="16" viewBox="0 0 24 24" role="presentation"><path d="M16.436 15.085l3.94 4.01a1 1 0 01-1.425 1.402l-3.938-4.006a7.5 7.5 0 111.423-1.406zM10.5 16a5.5 5.5 0 100-11 5.5 5.5 0 000 11z" fill="currentColor" fill-rule="evenodd"></path></svg>
-            </span>
-            <input  placeholder="Buscar" maxlength="500" default="" class=" pl-8 pr-3 h-8 bg-[#22272B] hover:bg-[#282E33] border-2.5 rounded" value="" style="min-width: 200px;">
-          </div>
-        </div>
-        <button class=" rounded-full w-8 h-8 mr-1 hover:bg-hoverItems" type="button">
-          <span class="w-8 h-8"><fa-icon [icon]= "faBell"></fa-icon></span>
         </button>
-        <button class=" rounded-full w-8 h-8 mr-1 hover:bg-hoverItems" type="button">
-          <fa-icon [icon]= "faInfoCircle"></fa-icon>
-        </button>
-        <button
-          (click)="isOpen = !isOpen"
-          type="button"
-          class="flex justify-center items-center rounded-full  w-8 h-8 hover:bg-hoverItems"
-          aria-expanded="false"
-          cdkOverlayOrigin
-          #OverLayProfile="cdkOverlayOrigin"
-        >
-          <img
-            class="w-6 h-6 rounded-full "
-            src="/assets/images/fotoperfil.jpg"
-            alt="user photo"
-          />
-        </button>
-      </div>
-
-    </div>
-  </div>
-</nav>
-
-<ng-template
-  cdkConnectedOverlay
-  [cdkConnectedOverlayOrigin]="OverLayProfile"
-  [cdkConnectedOverlayOpen]="isOpen"
-  (overlayOutsideClick)="true"
-
-  [cdkConnectedOverlayHasBackdrop]="true"
-	(backdropClick)="isOpen = false"
-	(detach)="isOpen = false"
->
-  <div
-    class="z-50 my-2 w-80 text-base text-textColor list-none bg-[#282E33] rounded-lg  divide-gray-500 shadow p-3"
-  >
-    <div class="">
-      <h2 class="block  mt-4 mb-2 px-2" style="font-size: 11px;">CUENTA</h2>
-      <div class="p-2 flex items-center">
-        <div class="">
-          <div class="" title="Alejandra Martinez (alejandramartinez205)">
+        <a routerLink="/app" class="px-2 hover:bg-hoverItems rounded">
+          <span class="flex justify-center items-center grow " >
             <img
-              class="w-9 h-9 rounded-full mr-2"
-              src="/assets/images/fotoperfil.jpg"
-              alt=""
+              loading="lazy"
+              class=""
+              src="/assets/images/logo-gradient-white-trello.png"
+              alt="logo"
+              style="width: 75px;"
+
             />
-          </div>
-        </div>
+          </span>
+        </a>
         <div class="">
-          <div class="">{{user?.name}}</div>
-          <div class="text-ellipsis text-xs">{{user?.email}}</div>
-        </div>
-      </div>
-      <nav class="">
-        <ul class="">
-          <li class="py-1.5 hover:bg-[#A1BDD914]">
-            <a class="" href="">
-              <span class="flex items-center text-sm">
-                <span class="">Cambiar cuentas</span>
-              </span>
-            </a>
-          </li>
-          <li class=" py-1.5 hover:bg-[#A1BDD914]">
-            <a class="" href="" target="_blank">
-              <span class="flex items-center text-sm justify-between">
-                <span class="">Gestionar cuenta</span>
-                <span class="px-1">
-                  <span aria-hidden="true" class="" style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);">
-                    <svg width="16" height="16" viewBox="0 0 24 24" role="presentation">
-                      <g fill="currentColor">
-                        <path
-                          d="M19.005 19c-.003 0-.005.002-.005.002l.005-.002zM5 19.006c0-.004-.002-.006-.005-.006H5v.006zM5 4.994V5v-.006zM19 19v-6h2v6.002A1.996 1.996 0 0119.005 21H4.995A1.996 1.996 0 013 19.006V4.994C3 3.893 3.896 3 4.997 3H11v2H5v14h14zM5 4.994V5v-.006zm0 14.012c0-.004-.002-.006-.005-.006H5v.006zM11 5H5v14h14v-6h2v6.002A1.996 1.996 0 0119.005 21H4.995A1.996 1.996 0 013 19.006V4.994C3 3.893 3.896 3 4.997 3H11v2zm8 0v3a1 1 0 002 0V4a1 1 0 00-1-1h-4a1 1 0 000 2h3z">
-                        </path>
-                        <path d="M12.707 12.707l8-8a1 1 0 10-1.414-1.414l-8 8a1 1 0 001.414 1.414z"></path>
-                      </g>
-                    </svg>
+          <ul class="flex items-center space-x-2 text-sm font-medium">
+            <li class="hidden min-[900px]:block p-1.5 rounded hover:bg-hoverItems cursor-pointer"
+              (click)="isOpenOverlayBoards = !isOpenOverlayBoards"
+              cdkOverlayOrigin
+              #boardsOverlay="cdkOverlayOrigin"
+            >
+              <div class="flex flex-row h-full">
+                <span>Espacio de Trabajo</span>
+                <span class="flex justify-center items-center flex-row ml-1">
+                  <span class="">
+                    <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
                   </span>
                 </span>
+
+              </div>
+            </li>
+            <li class="hidden min-[1040px]:flex flex-row h-full p-1.5 rounded hover:bg-hoverItems cursor-pointer">
+                <span>Reciente</span>
+                <span class="flex justify-center items-center flex-row ml-1">
+                  <span class="">
+                    <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
+                  </span>
+                </span>
+            </li>
+            <li class="hidden min-[1060px]:flex flex-row h-full p-1.5 rounded hover:bg-hoverItems cursor-pointer">
+                <span>Marcado</span>
+                <span class="flex justify-center items-center flex-row ml-1">
+                  <span class="">
+                    <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
+                  </span>
+                </span>
+            </li>
+            <li class="hidden min-[1281px]:flex flex-row h-full p-1.5 rounded hover:bg-hoverItems cursor-pointer">
+                <span>Plantillas</span>
+                <span class="flex justify-center items-center flex-row ml-1">
+                  <span class="">
+                    <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
+                  </span>
+                </span>
+            </li>
+
+            <!-- Item que despliega en móviles -->
+            <li class=" xl:hidden flex flex-row h-full p-1.5 rounded hover:bg-hoverItems cursor-pointer">
+              <span>Más</span>
+              <span class="flex justify-center items-center flex-row ml-1">
+                <span class="">
+                  <svg width="20" height="20" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.2929 16.7071L4.22185 9.63606C3.83132 9.24554 3.83132 8.61237 4.22185 8.22185C4.61237 7.83133 5.24554 7.83133 5.63606 8.22185L12 14.5858L18.364 8.22185C18.7545 7.83132 19.3877 7.83132 19.7782 8.22185C20.1687 8.61237 20.1687 9.24554 19.7782 9.63606L12.7071 16.7071C12.3166 17.0977 11.6834 17.0977 11.2929 16.7071Z" fill="currentColor"></path></svg>
+                </span>
               </span>
-            </a>
+            </li>
+
+            <button class="px-2.5 h-8 rounded text-[#1D2125] bg-[#579DFF] hover:bg-[#85B8FF]">
+              <span class="">Crear</span>
+            </button>
+
+          </ul>
+        </div>
+      </div>
+      <div class="flex ">
+
+        <div class="flex">
+          <div class="hidden md:block">
+            <div class=" relative flex items-center bg-[#22272B] mx-1 h-8 rounded text-[#8C9BAB]" style="width: 200px;">
+              <span class="absolute top-2 left-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" role="presentation"><path d="M16.436 15.085l3.94 4.01a1 1 0 01-1.425 1.402l-3.938-4.006a7.5 7.5 0 111.423-1.406zM10.5 16a5.5 5.5 0 100-11 5.5 5.5 0 000 11z" fill="currentColor" fill-rule="evenodd"></path></svg>
+              </span>
+              <input  placeholder="Buscar" maxlength="500" default="" class=" pl-8 pr-3 h-8 bg-[#22272B] hover:bg-[#282E33] border-2.5 rounded" value="" style="min-width: 200px;">
+            </div>
+          </div>
+          <button class=" rounded-full w-8 h-8 mr-1 hover:bg-hoverItems" type="button">
+            <span class="w-8 h-8"><fa-icon [icon]= "faBell"></fa-icon></span>
+          </button>
+          <button class=" rounded-full w-8 h-8 mr-1 hover:bg-hoverItems" type="button">
+            <fa-icon [icon]= "faInfoCircle"></fa-icon>
+          </button>
+          <button
+            (click)="isOpen = !isOpen"
+            type="button"
+            class="flex justify-center items-center rounded-full  w-8 h-8 hover:bg-hoverItems"
+            aria-expanded="false"
+            cdkOverlayOrigin
+            #OverLayProfile="cdkOverlayOrigin"
+          >
+            <img
+              class="w-6 h-6 rounded-full "
+              src="/assets/images/fotoperfil.jpg"
+              alt="user photo"
+            />
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="OverLayProfile"
+    [cdkConnectedOverlayOpen]="isOpen"
+    (overlayOutsideClick)="true"
+
+    [cdkConnectedOverlayHasBackdrop]="true"
+    (backdropClick)="isOpen = false"
+    (detach)="isOpen = false"
+  >
+    <div
+      class="z-50 my-2 w-80 text-base text-textColor list-none bg-[#282E33] rounded-lg  divide-gray-500 shadow p-3"
+    >
+      <div class="">
+        <h2 class="block  mt-4 mb-2 px-2" style="font-size: 11px;">CUENTA</h2>
+        <div class="p-2 flex items-center">
+          <div class="">
+            <div class="" title="Alejandra Martinez (alejandramartinez205)">
+              <img
+                class="w-9 h-9 rounded-full mr-2"
+                src="/assets/images/fotoperfil.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="">
+            <div class="">{{user?.name}}</div>
+            <div class="text-ellipsis text-xs">{{user?.email}}</div>
+          </div>
+        </div>
+        <nav class="">
+          <ul class="">
+            <li class="py-1.5 hover:bg-[#A1BDD914]">
+              <a class="" href="">
+                <span class="flex items-center text-sm">
+                  <span class="">Cambiar cuentas</span>
+                </span>
+              </a>
+            </li>
+            <li class=" py-1.5 hover:bg-[#A1BDD914]">
+              <a class="" href="" target="_blank">
+                <span class="flex items-center text-sm justify-between">
+                  <span class="">Gestionar cuenta</span>
+                  <span class="px-1">
+                    <span aria-hidden="true" class="" style="--icon-primary-color: currentColor; --icon-secondary-color: var(--ds-surface, #FFFFFF);">
+                      <svg width="16" height="16" viewBox="0 0 24 24" role="presentation">
+                        <g fill="currentColor">
+                          <path
+                            d="M19.005 19c-.003 0-.005.002-.005.002l.005-.002zM5 19.006c0-.004-.002-.006-.005-.006H5v.006zM5 4.994V5v-.006zM19 19v-6h2v6.002A1.996 1.996 0 0119.005 21H4.995A1.996 1.996 0 013 19.006V4.994C3 3.893 3.896 3 4.997 3H11v2H5v14h14zM5 4.994V5v-.006zm0 14.012c0-.004-.002-.006-.005-.006H5v.006zM11 5H5v14h14v-6h2v6.002A1.996 1.996 0 0119.005 21H4.995A1.996 1.996 0 013 19.006V4.994C3 3.893 3.896 3 4.997 3H11v2zm8 0v3a1 1 0 002 0V4a1 1 0 00-1-1h-4a1 1 0 000 2h3z">
+                          </path>
+                          <path d="M12.707 12.707l8-8a1 1 0 10-1.414-1.414l-8 8a1 1 0 001.414 1.414z"></path>
+                        </g>
+                      </svg>
+                    </span>
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="bg-hoverItems my-2" style="height: 1px;"></li>
+          </ul>
+        </nav>
+      </div>
+      <h2 class="block mt-4 mb-2 px-2" style="font-size: 11px;">TRELLO</h2>
+      <nav>
+        <ul>
+          <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Perfil y Visibilidad</span></a></li>
+          <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Actividad</span></a></li>
+          <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Tarjeta</span></a></li>
+          <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Ajustes</span></a></li>
+          <li class=" py-1.5 hover:bg-[#A1BDD914]">
+            <button class="w-full h-full">
+              <span class="flex items-center justify-between text-sm">
+                <span>Tema</span>
+                <span class="px-1">
+                  <svg width="16" height="16" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.7071 12.7071L9.63606 19.7781C9.24554 20.1687 8.61237 20.1687 8.22185 19.7781C7.83132 19.3876 7.83132 18.7544 8.22185 18.3639L14.5858 12L8.22185 5.636C7.83132 5.24548 7.83132 4.61231 8.22185 4.22179C8.61237 3.83126 9.24554 3.83126 9.63606 4.22179L16.7071 11.2929C17.0977 11.6834 17.0977 12.3165 16.7071 12.7071Z" fill="currentColor"></path></svg>
+                </span>
+              </span>
+            </button>
           </li>
-          <li class="bg-hoverItems my-2" style="height: 1px;"></li>
+
         </ul>
       </nav>
-    </div>
-    <h2 class="block mt-4 mb-2 px-2" style="font-size: 11px;">TRELLO</h2>
-    <nav>
-      <ul>
-        <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Perfil y Visibilidad</span></a></li>
-        <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Actividad</span></a></li>
-        <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Tarjeta</span></a></li>
-        <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Ajustes</span></a></li>
-        <li class=" py-1.5 hover:bg-[#A1BDD914]">
-          <button class="w-full h-full">
-            <span class="flex items-center justify-between text-sm">
-              <span>Tema</span>
-              <span class="px-1">
-                <svg width="16" height="16" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.7071 12.7071L9.63606 19.7781C9.24554 20.1687 8.61237 20.1687 8.22185 19.7781C7.83132 19.3876 7.83132 18.7544 8.22185 18.3639L14.5858 12L8.22185 5.636C7.83132 5.24548 7.83132 4.61231 8.22185 4.22179C8.61237 3.83126 9.24554 3.83126 9.63606 4.22179L16.7071 11.2929C17.0977 11.6834 17.0977 12.3165 16.7071 12.7071Z" fill="currentColor"></path></svg>
-              </span>
+      <div class="">
+        <li class="bg-hoverItems my-2" style="height: 1px;"></li>
+        <button class="w-full h-full py-1.5 hover:bg-[#A1BDD914]">
+          <span class="flex items-center justify-start text-sm">
+            <span class="px-1">
+              <svg width="16" height="16" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5048 5.67168C11.9099 5.32669 11.2374 5.10082 10.5198 5.0267C11.2076 3.81639 12.5085 3 14 3C16.2092 3 18 4.79086 18 7C18 7.99184 17.639 8.89936 17.0413 9.59835C19.9512 10.7953 22 13.6584 22 17C22 17.5523 21.5523 18 21 18H18.777C18.6179 17.2987 18.3768 16.6285 18.0645 16H19.917C19.4892 13.4497 17.4525 11.445 14.8863 11.065C14.9608 10.7218 15 10.3655 15 10C15 9.58908 14.9504 9.18974 14.857 8.80763C15.5328 8.48668 16 7.79791 16 7C16 5.89543 15.1046 5 14 5C13.4053 5 12.8711 5.25961 12.5048 5.67168ZM10 12C11.1046 12 12 11.1046 12 10C12 8.89543 11.1046 8 10 8C8.89543 8 8 8.89543 8 10C8 11.1046 8.89543 12 10 12ZM14 10C14 10.9918 13.639 11.8994 13.0412 12.5984C15.9512 13.7953 18 16.6584 18 20C18 20.5523 17.5523 21 17 21H3C2.44772 21 2 20.5523 2 20C2 16.6584 4.04879 13.7953 6.95875 12.5984C6.36099 11.8994 6 10.9918 6 10C6 7.79086 7.79086 6 10 6C12.2091 6 14 7.79086 14 10ZM9.99999 14C12.973 14 15.441 16.1623 15.917 19H4.08295C4.55902 16.1623 7.02699 14 9.99999 14Z" fill="currentColor"></path></svg>
             </span>
-          </button>
-        </li>
-
-      </ul>
-    </nav>
-    <div class="">
-      <li class="bg-hoverItems my-2" style="height: 1px;"></li>
-      <button class="w-full h-full py-1.5 hover:bg-[#A1BDD914]">
-        <span class="flex items-center justify-start text-sm">
-          <span class="px-1">
-            <svg width="16" height="16" role="presentation" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5048 5.67168C11.9099 5.32669 11.2374 5.10082 10.5198 5.0267C11.2076 3.81639 12.5085 3 14 3C16.2092 3 18 4.79086 18 7C18 7.99184 17.639 8.89936 17.0413 9.59835C19.9512 10.7953 22 13.6584 22 17C22 17.5523 21.5523 18 21 18H18.777C18.6179 17.2987 18.3768 16.6285 18.0645 16H19.917C19.4892 13.4497 17.4525 11.445 14.8863 11.065C14.9608 10.7218 15 10.3655 15 10C15 9.58908 14.9504 9.18974 14.857 8.80763C15.5328 8.48668 16 7.79791 16 7C16 5.89543 15.1046 5 14 5C13.4053 5 12.8711 5.25961 12.5048 5.67168ZM10 12C11.1046 12 12 11.1046 12 10C12 8.89543 11.1046 8 10 8C8.89543 8 8 8.89543 8 10C8 11.1046 8.89543 12 10 12ZM14 10C14 10.9918 13.639 11.8994 13.0412 12.5984C15.9512 13.7953 18 16.6584 18 20C18 20.5523 17.5523 21 17 21H3C2.44772 21 2 20.5523 2 20C2 16.6584 4.04879 13.7953 6.95875 12.5984C6.36099 11.8994 6 10.9918 6 10C6 7.79086 7.79086 6 10 6C12.2091 6 14 7.79086 14 10ZM9.99999 14C12.973 14 15.441 16.1623 15.917 19H4.08295C4.55902 16.1623 7.02699 14 9.99999 14Z" fill="currentColor"></path></svg>
+            <span>Crear Espacio de Trabajo</span>
           </span>
-          <span>Crear Espacio de Trabajo</span>
-        </span>
-      </button>
+        </button>
+      </div>
+      <div class="">
+        <li class="bg-hoverItems my-2" style="height: 1px;"></li>
+        <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Ayuda</span></a></li>
+        <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Accesos Directos</span></a></li>
+      </div>
+      <div class="">
+        <li class="bg-hoverItems my-2" style="height: 1px;"></li>
+        <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href="" (click)="logout()"><span class="text-sm">Cerrar Sesión</span></a></li>
+      </div>
     </div>
-    <div class="">
-      <li class="bg-hoverItems my-2" style="height: 1px;"></li>
-      <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Ayuda</span></a></li>
-      <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href=""><span class="text-sm">Accesos Directos</span></a></li>
-    </div>
-    <div class="">
-      <li class="bg-hoverItems my-2" style="height: 1px;"></li>
-      <li class=" py-1.5 hover:bg-[#A1BDD914]"><a href="" (click)="logout()"><span class="text-sm">Cerrar Sesión</span></a></li>
-    </div>
-  </div>
 
 
-</ng-template>
+  </ng-template>
 
-<ng-template
-  cdkConnectedOverlay
-  [cdkConnectedOverlayOrigin]="boardsOverlay"
-  [cdkConnectedOverlayOpen]="isOpenOverlayBoards"
-  (overlayOutsideClick)="isOpenOverlayBoards = !isOpenOverlayBoards"
->
-  <div
-    class="z-50 my-4 w-60 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
+  <ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="boardsOverlay"
+    [cdkConnectedOverlayOpen]="isOpenOverlayBoards"
+    (overlayOutsideClick)="isOpenOverlayBoards = !isOpenOverlayBoards"
   >
-    <div class="py-2 px-4 text-center relative">
-      <span class="block text-normal text-gray-900">Boards</span>
-      <button
-        (click)="isOpenOverlayBoards = !isOpenOverlayBoards"
-        class="block text-sm text-gray-900 absolute right-3 top-3"
-      >
-        <fa-icon [icon]="faClose"></fa-icon>
-      </button>
+    <div
+      class="z-50 my-4 w-60 text-base list-none bg-white rounded divide-y divide-gray-100 shadow"
+    >
+      <div class="py-2 px-4 text-center relative">
+        <span class="block text-normal text-gray-900">Boards</span>
+        <button
+          (click)="isOpenOverlayBoards = !isOpenOverlayBoards"
+          class="block text-sm text-gray-900 absolute right-3 top-3"
+        >
+          <fa-icon [icon]="faClose"></fa-icon>
+        </button>
+      </div>
+      <div class="py-3 px-4 flex justify-between">Content</div>
     </div>
-    <div class="py-3 px-4 flex justify-between">Content</div>
-  </div>
-</ng-template>
+  </ng-template>
+
+</ng-container>
