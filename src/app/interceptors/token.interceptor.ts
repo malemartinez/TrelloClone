@@ -7,8 +7,9 @@ import {
   HttpContext,
   HttpContextToken
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { TokenService } from '@services/token.service';
+import { AuthService } from '@services/auth.service';
 
 const CHECK_TOKEN = new HttpContextToken<boolean>( ()=> false );
 
@@ -20,12 +21,19 @@ export function checkToken(){
 export class TokenInterceptor implements HttpInterceptor {
 
   constructor(
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private authService: AuthService,
+
   ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    const isValidToken = this.tokenService.isValidToken();
     if(request.context.get(CHECK_TOKEN)){
-      return this.addToken(request,next);
+      if(isValidToken){
+        return this.addToken(request,next);
+      }else{
+        return this.updateRefreshTokenAndToken(request,next);
+      }
     }
     return next.handle(request);
   }
@@ -41,4 +49,17 @@ export class TokenInterceptor implements HttpInterceptor {
     return next.handle(request);
 
   }
+  private updateRefreshTokenAndToken (request: HttpRequest<unknown>, next: HttpHandler){
+    const isValidRefreshToken = this.tokenService.isValidRefreshToken();
+    const refresh_token = this.tokenService.getRefreshToken();
+    if (isValidRefreshToken && refresh_token){
+      return this.authService.refreshToken(refresh_token)
+      .pipe(
+        switchMap( ()=> this.addToken(request ,next ))
+      )
+    }
+    return next.handle(request);
+
+  }
+
 }
