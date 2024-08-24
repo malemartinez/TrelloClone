@@ -12,7 +12,7 @@ export class LayoutComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.authService.getProfile()
+    this.authService.getProfile().subscribe();
   }
 
 }
