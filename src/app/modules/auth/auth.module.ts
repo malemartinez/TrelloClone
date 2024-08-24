@@ -7,6 +7,15 @@ import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SharedModule } from '../shared/shared.module';
+import { BackgroundComponent } from './components/background/background.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ForgotPasswordFormComponent } from './components/forgot-password-form/forgot-password-form.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { RecoveryFormComponent } from './components/recovery-form/recovery-form.component';
+import { RegisterFormComponent } from './components/register-form/register-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -14,12 +23,21 @@ import { SharedModule } from '../shared/shared.module';
     ForgotPasswordComponent,
     RegisterComponent,
     RecoveryComponent,
-    LoginComponent
+    LoginComponent,
+    BackgroundComponent,
+    FooterComponent,
+    ForgotPasswordFormComponent,
+    HeaderComponent,
+    LoginFormComponent,
+    RecoveryFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
-    SharedModule
+    ReactiveFormsModule,
+    SharedModule,
+    FontAwesomeModule
   ]
 })
 export class AuthModule { }
